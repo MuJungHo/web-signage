@@ -66,9 +66,6 @@ export default ({
     setStart({})
     board.current.removeEventListener('mousemove', drag)
   }
-  const focus = () => {
-
-  }
   const drag = e => {
     var newLeft = layer.left + e.x - start.left
     var newTop = layer.top + e.y - start.top
@@ -119,6 +116,18 @@ export default ({
     >
       <rect
         style={{ fill: 'white', stroke: 'red', strokeWidth: 1, fillOpacity: '.5' }}
+        x={layer.left}
+        y={layer.top}
+        width={layer.width}
+        height={layer.height}
+        onMouseDown={startDrag}
+      />
+
+      <image
+        xlinkHref={{
+          'image': `../assets/images/${layer.data.id}.jpg`,
+          'video': `../assets/previews/${layer.data.id}.jpg`,
+        }[layer.data.type]}
         x={layer.left}
         y={layer.top}
         width={layer.width}
