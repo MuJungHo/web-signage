@@ -43,6 +43,7 @@
     "eslint-plugin-react-hooks": "^1.6.1",
     "file-loader": "4.3.0",
     "fs-extra": "^8.1.0",
+    "gh-pages": "^3.2.3",
     "html-webpack-plugin": "4.0.0-beta.11",
     "html2canvas": "^1.0.0-rc.5",
     "identity-obj-proxy": "3.0.0",
@@ -105,9 +106,7 @@
     "build": "node scripts/build.js",
     "test": "node scripts/test.js --env=node",
     "svg": "svgr -d src/icons/ public/assets/",
-    "build:dev": "env-cmd -f .env.dev node scripts/build.js",
-    "build:preview": "env-cmd -f .env.preview node scripts/build.js",
-    "build:local": "env-cmd -f .env.local node scripts/build.js"
+    "deploy": "gh-pages -d build"
   },
   "browserslist": [
     ">0.2%",
