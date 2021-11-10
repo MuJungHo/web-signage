@@ -110,7 +110,7 @@ export default ({
   return (
     <g
       onFocus={() => setActiveLayer({ ...layer })}
-      onBlur={() => setActiveLayer({})}
+      // onBlur={() => setActiveLayer({})}
       style={{ outline: 'none' }}
       tabIndex="-1"
     >
