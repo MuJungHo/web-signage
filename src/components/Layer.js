@@ -8,7 +8,7 @@ export default ({
   setLayers,
   layers,
   activeLayer,
-  setActiveLayer,
+  setActiveLayer
 }) => {
   const [start, setStart] = React.useState(null)
   const tops = layers.filter(l => l.id !== layer.id).map(l => l.top)
@@ -115,7 +115,7 @@ export default ({
       tabIndex="-1"
     >
       <rect
-        style={{ fill: 'white', stroke: 'red', strokeWidth: 1, fillOpacity: '.5' }}
+        style={{ fill: 'white', stroke: layer.id === activeLayer.id ? '#bebebe' : undefined, strokeWidth: 1, fillOpacity: '.5' }}
         x={layer.left}
         y={layer.top}
         width={layer.width}
@@ -128,10 +128,10 @@ export default ({
           'image': `./assets/images/${layer.data.id}.jpg`,
           'video': `./assets/previews/${layer.data.id}.jpg`,
         }[layer.data.type]}
-        x={layer.left}
-        y={layer.top}
-        width={layer.width}
-        height={layer.height}
+        x={layer.left + 1}
+        y={layer.top + 1}
+        width={layer.width - 2}
+        height={layer.height - 2}
         onMouseDown={startDrag}
       />
       {layer.id === activeLayer.id && <>
