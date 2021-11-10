@@ -2,7 +2,7 @@
   "name": "web-signage",
   "version": "0.0.1",
   "private": true,
-  "homepage": "./",
+  "homepage": "https://mujungho.github.io/web-signage",
   "devDependencies": {
     "@svgr/cli": "^5.4.0",
     "enzyme": "^3.11.0",

@@ -125,8 +125,8 @@ export default ({
 
       <image
         xlinkHref={{
-          'image': `../assets/images/${layer.data.id}.jpg`,
-          'video': `../assets/previews/${layer.data.id}.jpg`,
+          'image': `./assets/images/${layer.data.id}.jpg`,
+          'video': `./assets/previews/${layer.data.id}.jpg`,
         }[layer.data.type]}
         x={layer.left}
         y={layer.top}
