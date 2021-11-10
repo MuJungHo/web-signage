@@ -1,6 +1,6 @@
 import React from 'react'
-import Board from '../components/editor/Board'
-import ActionBar from '../components/editor/ActionBar'
+import Board from './components/editor/Board'
+import ActionBar from './components/editor/ActionBar'
 export default () => {
   const [layers, setLayers] = React.useState([])
   return (
