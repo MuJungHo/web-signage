@@ -25,24 +25,6 @@ export default ({ layers, setLayers, activeLayerID, setActiveLayerID }) => {
         }}>
         <FileCopyIcon />
       </IconButton>
-      <IconButton color="primary" component="span"
-        disabled={!activeLayerID}
-        style={{ float: 'right' }}
-        onClick={() => setLayers([
-          ...layers,
-          {
-            id: moment().unix(),
-            width: 100,
-            height: 100,
-            top: 0,
-            left: 0,
-            data: {
-              type: 'video',
-              id: 0
-            }
-          }])}>
-        <Editcon />
-      </IconButton>
     </Paper>
   )
 }
