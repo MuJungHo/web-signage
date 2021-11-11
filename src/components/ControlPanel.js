@@ -1,7 +1,7 @@
 import React from 'react'
 import { TextField, Button } from '@material-ui/core'
 import MediaLibrary from './MediaLibrary'
-import { media } from '../mediaLibrary'
+import { media } from '../medias'
 const BasicProperties = ({ activeLayer }) => {
   return (
     <>
