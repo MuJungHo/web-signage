@@ -60,8 +60,8 @@ export default ({ isDialogOpen, setDialogOpen, close, type, confirm }) => {
         </div>
       </DialogContent>
       <DialogActions>
-        <Button onClick={() => setDialogOpen(false)}>Cancel</Button>
-        <Button onClick={handleConfirm}>Confirm</Button>
+        <Button variant="contained" onClick={() => setDialogOpen(false)}>Cancel</Button>
+        <Button variant="contained" style={{ marginLeft: 20 }} color="primary" disabled={!selected} onClick={handleConfirm}>Confirm</Button>
       </DialogActions>
     </Dialog>
   )
