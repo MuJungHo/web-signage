@@ -3,7 +3,7 @@ import {
   Button,
 } from '@material-ui/core'
 import Player from './Player'
-export default ({ layers }) => {
+export default ({ layers, board }) => {
   const [isDialogOpen, setDialogOpen] = React.useState(false)
   return (
     <div style={{
@@ -16,7 +16,7 @@ export default ({ layers }) => {
       <h1>Web Player</h1>
       <div style={{ flex: 1 }}></div>
       <Button variant="contained" color="primary" onClick={() => setDialogOpen(true)}>Play</Button>
-      <Player isDialogOpen={isDialogOpen} setDialogOpen={setDialogOpen} layers={layers} />
+      <Player isDialogOpen={isDialogOpen} setDialogOpen={setDialogOpen} layers={layers} board={board}/>
     </div>
   )
 }

@@ -1,15 +1,15 @@
 import React from 'react'
 import Layer from './Layer'
-export default ({ layers, setLayers, activeLayerID, setActiveLayerID }) => {
-  const board = React.useRef()
+export default ({ layers, setLayers, activeLayerID, setActiveLayerID, board }) => {
+  const boardRef = React.useRef()
   return (
-    <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width={window.innerWidth / 2} height={window.innerHeight / 2}
-      ref={board}
+    <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width={board.width} height={board.height}
+      ref={boardRef}
       style={{ marginTop: 20 }}
     >
       <rect
-        width={window.innerWidth / 2}
-        height={window.innerHeight / 2} x="0" y="0" fill="#f5f5f5"
+        width={board.width}
+        height={board.height} x="0" y="0" fill={board.backgroundColor}
         onClick={() => setActiveLayerID()} />
       {
         layers
@@ -21,7 +21,7 @@ export default ({ layers, setLayers, activeLayerID, setActiveLayerID }) => {
               layer={layer}
               layers={layers}
               setLayers={setLayers}
-              board={board}
+              board={boardRef}
             />)
       }
     </svg>

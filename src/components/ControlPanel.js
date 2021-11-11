@@ -2,6 +2,7 @@ import React from 'react'
 import { TextField, Button } from '@material-ui/core'
 import MediaLibrary from './MediaLibrary'
 import { media } from '../medias'
+import ColorPicker from './ColorPicker'
 const BasicProperties = ({ activeLayer }) => {
   return (
     <>
@@ -126,7 +127,28 @@ const VideoProperties = ({ layers, setLayers, activeLayer }) => {
     </div>
   )
 }
-export default ({ layers, setLayers, activeLayerID }) => {
+const BoardProperties = ({ board, setBoard }) => {
+  const [isDialogOpen, setDialogOpen] = React.useState(false)
+  return (
+    <div>
+      <h2>Board Properties</h2>
+      <h3 style={{ marginTop: 10 }}>{`Width: ${board.width}`}</h3>
+      <h3 style={{ marginTop: 10 }}>{`Height: ${board.height}`}</h3>
+      <div style={{ display: 'flex', alignItems: 'center' }}>
+        <h3 style={{ whiteSpace: 'nowrap' }}>Background Color: </h3>
+        <ColorPicker
+          style={{ marginLeft: 20 }}
+          value={board.backgroundColor}
+          onChange={color => setBoard({
+            ...board,
+            backgroundColor: color.hex
+          })}
+        />
+      </div>
+    </div>
+  )
+}
+export default ({ layers, setLayers, activeLayerID, board, setBoard }) => {
   const activeLayer = layers.find(layer => layer.id === activeLayerID) || {}
   return (
     <div style={{
@@ -136,11 +158,11 @@ export default ({ layers, setLayers, activeLayerID }) => {
       padding: 20
     }}>
       {
-        activeLayer.data && {
+        activeLayer.data ? {
           'image': <ImageProperties activeLayer={activeLayer} layers={layers} setLayers={setLayers} />,
           'video': <VideoProperties activeLayer={activeLayer} layers={layers} setLayers={setLayers} />
         }[activeLayer.data.type]
-
+          : <BoardProperties board={board} setBoard={setBoard}/>
       }
 
     </div>

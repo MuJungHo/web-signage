@@ -31,6 +31,12 @@ export default () => {
     // },
   ])
   const [activeLayerID, setActiveLayerID] = React.useState()
+  const [board, setBoard] = React.useState({
+    width: window.innerWidth / 2,
+    height: window.innerHeight / 2,
+    backgroundColor: '#f5f5f5',
+    backgroundImageId: 0
+  })
   const handleAddLayer = type => {
     setLayers([
       ...layers,
@@ -52,7 +58,9 @@ export default () => {
       height: '100vh',
       backgroundColor: 'rgba(74,91,117,.1)'
     }}>
-      <Header layers={layers} />
+      <Header
+        layers={layers}
+        board={board} />
       <div style={{
         width: '100%',
         display: 'flex',
@@ -69,6 +77,7 @@ export default () => {
           />
           <div style={{ height: '100%', display: 'flex', alignItems: 'center', }}>
             <Board
+              board={board}
               layers={layers}
               setLayers={setLayers}
               activeLayerID={activeLayerID}
@@ -77,6 +86,8 @@ export default () => {
           </div>
         </div>
         <ControlPanel
+          board={board}
+          setBoard={setBoard}
           layers={layers}
           setLayers={setLayers}
           activeLayerID={activeLayerID}

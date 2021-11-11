@@ -41,14 +41,14 @@ const Layer = ({ layer }) => {
     </div>
   )
 }
-export default ({ isDialogOpen, setDialogOpen, layers }) => {
+export default ({ isDialogOpen, setDialogOpen, layers, board }) => {
   return (
     <Dialog
       open={isDialogOpen}
       onClose={() => setDialogOpen(false)}
       fullScreen
     >
-      <div style={{ width: '100%', height: '100%', position: 'relative' }}>
+      <div style={{ width: '100%', height: '100%', position: 'relative', backgroundColor: board.backgroundColor }}>
         {
           layers.map(layer => <Layer key={layer.id} layer={layer} />)
         }
