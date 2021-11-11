@@ -6,7 +6,7 @@ import moment from 'moment'
 export default ({ layers, setLayers, activeLayerID, setActiveLayerID }) => {
   const activeLayer = layers.find(layer => layer.id === activeLayerID) || {}
   return (
-    <Paper style={{ width: 960 }}>
+    <div style={{ width: '100%' }}>
       <IconButton color="primary" component="span"
         disabled={!activeLayerID}
         style={{ float: 'right' }}
@@ -24,6 +24,6 @@ export default ({ layers, setLayers, activeLayerID, setActiveLayerID }) => {
         }}>
         <FileCopyIcon />
       </IconButton>
-    </Paper>
+    </div>
   )
 }

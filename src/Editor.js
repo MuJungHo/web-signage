@@ -60,19 +60,21 @@ export default () => {
         justifyContent: 'center',
       }}>
         <ToolBar addLayer={handleAddLayer} />
-        <div style={{ flex: 1, padding: 20, display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+        <div style={{ flex: 1, padding: 20, display: 'flex', flexDirection: 'column', alignItems: 'center', height: 'calc(100vh - 80px)' }}>
           <ActionBar
             layers={layers}
             setLayers={setLayers}
             activeLayerID={activeLayerID}
             setActiveLayerID={setActiveLayerID}
           />
-          <Board
-            layers={layers}
-            setLayers={setLayers}
-            activeLayerID={activeLayerID}
-            setActiveLayerID={setActiveLayerID}
-          />
+          <div style={{ height: '100%', display: 'flex', alignItems: 'center', }}>
+            <Board
+              layers={layers}
+              setLayers={setLayers}
+              activeLayerID={activeLayerID}
+              setActiveLayerID={setActiveLayerID}
+            />
+          </div>
         </div>
         <ControlPanel
           layers={layers}
