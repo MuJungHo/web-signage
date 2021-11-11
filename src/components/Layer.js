@@ -74,8 +74,8 @@ export default ({
     var newBottom = layer.top + e.y - start.top + layer.height
     if (newLeft < 0) newLeft = 0
     if (newTop < 0) newTop = 0
-    if (newRight > 960) newLeft = 960 - layer.width
-    if (newBottom > 540) newTop = 540 - layer.height
+    if (newRight > window.innerWidth / 2) newLeft = window.innerWidth / 2 - layer.width
+    if (newBottom > window.innerHeight / 2) newTop = window.innerHeight / 2 - layer.height
     if (layerYs.some(layerY => Math.abs(layerY - newLeft) < 10)) {
       newLeft = layerYs.find(layerY => Math.abs(layerY - newLeft) < 10)
     }
