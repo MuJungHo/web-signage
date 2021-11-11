@@ -48,7 +48,17 @@ export default ({ isDialogOpen, setDialogOpen, layers, board }) => {
       onClose={() => setDialogOpen(false)}
       fullScreen
     >
-      <div style={{ width: '100%', height: '100%', position: 'relative', backgroundColor: board.backgroundColor }}>
+      <div
+        style={{
+          width: '100%',
+          height: '100%',
+          position: 'relative',
+          background: board.background.type === 'color'
+            ? board.background.color
+            : board.background.imageId === 0
+              ? board.background.color
+              : `no-repeat center/100% url(./assets/images/${board.background.imageId}.jpg)`
+        }}>
         {
           layers.map(layer => <Layer key={layer.id} layer={layer} />)
         }

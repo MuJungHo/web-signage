@@ -34,8 +34,11 @@ export default () => {
   const [board, setBoard] = React.useState({
     width: window.innerWidth / 2,
     height: window.innerHeight / 2,
-    backgroundColor: '#f5f5f5',
-    backgroundImageId: 0
+    background: {
+      type: 'color',
+      color: '#f5f5f5',
+      imageId: 0
+    }
   })
   const handleAddLayer = type => {
     setLayers([
