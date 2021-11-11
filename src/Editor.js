@@ -7,27 +7,28 @@ import Header from './components/Header'
 import moment from 'moment'
 
 export default () => {
-  const [layers, setLayers] = React.useState([{
-    id: 1,
-    width: 115,
-    height: 80,
-    top: 20,
-    left: 30,
-    data: {
-      type: 'video',
-      id: 1
-    }
-  },{
-    id: 2,
-    width: 400,
-    height: 300,
-    top: 80,
-    left: 200,
-    data: {
-      type: 'image',
-      id: 1
-    }
-  },
+  const [layers, setLayers] = React.useState([
+    // {
+    //   id: 1,
+    //   width: 115,
+    //   height: 80,
+    //   top: 20,
+    //   left: 30,
+    //   data: {
+    //     type: 'video',
+    //     id: 1
+    //   }
+    // },{
+    //   id: 2,
+    //   width: 400,
+    //   height: 300,
+    //   top: 80,
+    //   left: 200,
+    //   data: {
+    //     type: 'image',
+    //     id: 1
+    //   }
+    // },
   ])
   const [activeLayerID, setActiveLayerID] = React.useState()
   const handleAddLayer = type => {
@@ -51,7 +52,7 @@ export default () => {
       height: '100vh',
       backgroundColor: 'rgba(74,91,117,.1)'
     }}>
-      <Header layers={layers}/>
+      <Header layers={layers} />
       <div style={{
         width: '100%',
         display: 'flex',
