@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/web-signage/static/css/main.469c52e7.chunk.css",
-    "main.js": "/web-signage/static/js/main.65da011e.chunk.js",
-    "main.js.map": "/web-signage/static/js/main.65da011e.chunk.js.map",
+    "main.js": "/web-signage/static/js/main.3f869520.chunk.js",
+    "main.js.map": "/web-signage/static/js/main.3f869520.chunk.js.map",
     "runtime-main.js": "/web-signage/static/js/runtime-main.2a343640.js",
     "runtime-main.js.map": "/web-signage/static/js/runtime-main.2a343640.js.map",
     "static/js/2.97ba834a.chunk.js": "/web-signage/static/js/2.97ba834a.chunk.js",
     "static/js/2.97ba834a.chunk.js.map": "/web-signage/static/js/2.97ba834a.chunk.js.map",
     "index.html": "/web-signage/index.html",
-    "precache-manifest.1ea6dc0fcd4dc28ee388c99b8a19a876.js": "/web-signage/precache-manifest.1ea6dc0fcd4dc28ee388c99b8a19a876.js",
+    "precache-manifest.09151085f44d589c3e1ade2c8385ff12.js": "/web-signage/precache-manifest.09151085f44d589c3e1ade2c8385ff12.js",
     "service-worker.js": "/web-signage/service-worker.js",
     "static/css/main.469c52e7.chunk.css.map": "/web-signage/static/css/main.469c52e7.chunk.css.map",
     "static/js/2.97ba834a.chunk.js.LICENSE.txt": "/web-signage/static/js/2.97ba834a.chunk.js.LICENSE.txt"
@@ -17,6 +17,6 @@
     "static/js/runtime-main.2a343640.js",
     "static/js/2.97ba834a.chunk.js",
     "static/css/main.469c52e7.chunk.css",
-    "static/js/main.65da011e.chunk.js"
+    "static/js/main.3f869520.chunk.js"
   ]
 }
