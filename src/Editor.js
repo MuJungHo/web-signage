@@ -3,6 +3,7 @@ import Board from './components/Board'
 import ActionBar from './components/ActionBar'
 import ToolBar from './components/ToolBar'
 import ControlPanel from './components/ControlPanel'
+import Header from './components/Header'
 import moment from 'moment'
 
 export default () => {
@@ -27,27 +28,32 @@ export default () => {
     <div style={{
       width: '100%',
       height: '100vh',
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'center',
       backgroundColor: 'rgba(74,91,117,.1)'
     }}>
-      <ToolBar addLayer={handleAddLayer}/>
-      <div style={{ width: 1000, padding: 20 }}>
-        <ActionBar
-          layers={layers}
-          setLayers={setLayers}
-          activeLayer={activeLayer}
-          setActiveLayer={setActiveLayer}
-        />
-        <Board
-          layers={layers}
-          setLayers={setLayers}
-          activeLayer={activeLayer}
-          setActiveLayer={setActiveLayer}
-        />
+      <Header />
+      <div style={{
+        width: '100%',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+      }}>
+        <ToolBar addLayer={handleAddLayer} />
+        <div style={{ flex: 1, padding: 20, display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+          <ActionBar
+            layers={layers}
+            setLayers={setLayers}
+            activeLayer={activeLayer}
+            setActiveLayer={setActiveLayer}
+          />
+          <Board
+            layers={layers}
+            setLayers={setLayers}
+            activeLayer={activeLayer}
+            setActiveLayer={setActiveLayer}
+          />
+        </div>
+        <ControlPanel />
       </div>
-      <ControlPanel />
     </div>
   )
 }

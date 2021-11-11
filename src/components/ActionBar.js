@@ -6,9 +6,9 @@ import FileCopyIcon from '@material-ui/icons/FileCopy';
 import moment from 'moment'
 export default ({ layers, setLayers, activeLayer, setActiveLayer }) => {
   return (
-    <Paper>
+    <Paper style={{ width: 960 }}>
       <IconButton color="primary" component="span"
-        onClick={() => {}}>
+        onClick={() => { }}>
         <FileCopyIcon />
       </IconButton>
       <IconButton color="primary" component="span"
@@ -36,7 +36,7 @@ export default ({ layers, setLayers, activeLayer, setActiveLayer }) => {
               id: 0
             }
           }])}>
-          <Editcon />
+        <Editcon />
       </IconButton>
     </Paper>
   )

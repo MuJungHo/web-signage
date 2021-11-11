@@ -6,8 +6,8 @@ export default props => {
   const { addLayer } = props
   return (
     <div style={{
-      flex: 1,
-      height: '100vh',
+      width: 120,
+      height: 'calc(100vh - 80px)',
       backgroundColor: '#f1f3f7'
     }}>
       <IconButton color="primary" component="span"

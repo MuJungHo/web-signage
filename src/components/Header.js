@@ -1,11 +1,10 @@
 import React from 'react'
-
-export default () => {
+export default props => {
   return (
     <div style={{
-      width: 240,
-      height: 'calc(100vh - 80px)',
+      height: 80,
       backgroundColor: '#f1f3f7'
-    }}></div>
+    }}>
+    </div>
   )
 }
