@@ -1,5 +1,5 @@
 import React from 'react'
-export default props => {
+export default () => {
   return (
     <div style={{
       height: 80,

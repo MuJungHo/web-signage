@@ -4,7 +4,7 @@ import Editcon from '@material-ui/icons/Edit';
 import DeleteIcon from '@material-ui/icons/Delete';
 import FileCopyIcon from '@material-ui/icons/FileCopy';
 import moment from 'moment'
-export default ({ layers, setLayers, activeLayer, setActiveLayer }) => {
+export default ({ layers, setLayers, activeLayerID, setActiveLayerID }) => {
   return (
     <Paper style={{ width: 960 }}>
       <IconButton color="primary" component="span"
@@ -12,16 +12,16 @@ export default ({ layers, setLayers, activeLayer, setActiveLayer }) => {
         <FileCopyIcon />
       </IconButton>
       <IconButton color="primary" component="span"
-        disabled={!activeLayer.id}
+        disabled={!activeLayerID}
         style={{ float: 'right' }}
         onClick={() => {
-          setLayers([...layers.filter(layer => layer.id !== activeLayer.id)])
-          setActiveLayer({})
+          setLayers([...layers.filter(layer => layer.id !== activeLayerID)])
+          setActiveLayerID({})
         }}>
         <DeleteIcon />
       </IconButton>
       <IconButton color="primary" component="span"
-        disabled={!activeLayer.id}
+        disabled={!activeLayerID}
         style={{ float: 'right' }}
         onClick={() => setLayers([
           ...layers,

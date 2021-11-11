@@ -7,8 +7,8 @@ export default ({
   board,
   setLayers,
   layers,
-  activeLayer,
-  setActiveLayer
+  activeLayerID,
+  setActiveLayerID
 }) => {
   const [start, setStart] = React.useState(null)
   const tops = layers.filter(l => l.id !== layer.id).map(l => l.top)
@@ -17,6 +17,7 @@ export default ({
   const rights = layers.filter(l => l.id !== layer.id).map(l => l.left + l.width)
   const layerXs = tops.concat(bottoms)
   const layerYs = lefts.concat(rights)
+  
   React.useEffect(() => {
     if (JSON.stringify(start) !== JSON.stringify({}) && start !== null) {
       board.current.addEventListener('mousemove', drag)
@@ -109,13 +110,13 @@ export default ({
   }
   return (
     <g
-      onFocus={() => setActiveLayer({ ...layer })}
-      // onBlur={() => setActiveLayer({})}
+      onFocus={() => setActiveLayerID(layer.id)}
+      // onBlur={() => setActiveLayerID({})}
       style={{ outline: 'none' }}
       tabIndex="-1"
     >
       <rect
-        style={{ fill: 'white', stroke: layer.id === activeLayer.id ? '#bebebe' : undefined, strokeWidth: 1, fillOpacity: '.5' }}
+        style={{ fill: 'white', stroke: layer.id === activeLayerID ? '#bebebe' : undefined, strokeWidth: 1, fillOpacity: '.5' }}
         x={layer.left}
         y={layer.top}
         width={layer.width}
@@ -134,7 +135,7 @@ export default ({
         height={layer.height - 2}
         onMouseDown={startDrag}
       />
-      {layer.id === activeLayer.id && <>
+      {layer.id === activeLayerID && <>
         <Anchor
           position="left-top"
           board={board}

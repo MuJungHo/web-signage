@@ -8,7 +8,7 @@ import moment from 'moment'
 
 export default () => {
   const [layers, setLayers] = React.useState([])
-  const [activeLayer, setActiveLayer] = React.useState({})
+  const [activeLayerID, setActiveLayerID] = React.useState()
   const handleAddLayer = type => {
     setLayers([
       ...layers,
@@ -42,17 +42,21 @@ export default () => {
           <ActionBar
             layers={layers}
             setLayers={setLayers}
-            activeLayer={activeLayer}
-            setActiveLayer={setActiveLayer}
+            activeLayerID={activeLayerID}
+            setActiveLayerID={setActiveLayerID}
           />
           <Board
             layers={layers}
             setLayers={setLayers}
-            activeLayer={activeLayer}
-            setActiveLayer={setActiveLayer}
+            activeLayerID={activeLayerID}
+            setActiveLayerID={setActiveLayerID}
           />
         </div>
-        <ControlPanel />
+        <ControlPanel
+          layers={layers}
+          setLayers={setLayers}
+          activeLayerID={activeLayerID}
+        />
       </div>
     </div>
   )
