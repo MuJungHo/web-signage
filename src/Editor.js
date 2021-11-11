@@ -7,7 +7,18 @@ import Header from './components/Header'
 import moment from 'moment'
 
 export default () => {
-  const [layers, setLayers] = React.useState([])
+  const [layers, setLayers] = React.useState([{
+    id: 1,
+    width: 100,
+    height: 100,
+    top: 0,
+    left: 0,
+    data: {
+      type: 'video',
+      id: 0
+    }
+  }
+  ])
   const [activeLayerID, setActiveLayerID] = React.useState()
   const handleAddLayer = type => {
     setLayers([
