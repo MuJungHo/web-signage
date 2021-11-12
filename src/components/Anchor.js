@@ -2,7 +2,8 @@ import React from 'react'
 
 export default ({ cx, cy, board, position, layer, offset }) => {
   const [isMoving, setMoving] = React.useState(false)
-  const startDrag = () => {
+  const startDrag = e => {
+    e.stopPropagation()
     setMoving(true)
     board.current.addEventListener('mousemove', drag)
     board.current.addEventListener('mouseup', endDrag)

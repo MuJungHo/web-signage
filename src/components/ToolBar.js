@@ -1,7 +1,9 @@
 import React from 'react'
 import { Button } from '@material-ui/core'
-import ImageIcon from '@material-ui/icons/Image';
-import TheatersIcon from '@material-ui/icons/Theaters';
+import Image from '@material-ui/icons/Image';
+import Theaters from '@material-ui/icons/Theaters';
+import TextFields from '@material-ui/icons/TextFields';
+import Clock from '@material-ui/icons/AccessTime';
 export default props => {
   const { addLayer } = props
   const buttonStyle = {
@@ -23,8 +25,10 @@ export default props => {
       flexDirection: 'column',
       alignItems: 'center'
     }}>
-      <Button variant="outlined" color="primary" onClick={() => addLayer('image')} style={{ ...buttonStyle }}><ImageIcon style={{ ...iconStyle }} /></Button>
-      <Button variant="outlined" color="primary" onClick={() => addLayer('video')} style={{ ...buttonStyle }}><TheatersIcon style={{ ...iconStyle }} /></Button>
+      <Button variant="outlined" color="primary" onClick={() => addLayer('image')} style={{ ...buttonStyle }}><Image style={{ ...iconStyle }} /></Button>
+      <Button variant="outlined" color="primary" onClick={() => addLayer('video')} style={{ ...buttonStyle }}><Theaters style={{ ...iconStyle }} /></Button>
+      <Button variant="outlined" color="primary" onClick={() => addLayer('text')} style={{ ...buttonStyle }}><TextFields style={{ ...iconStyle }} /></Button>
+      <Button variant="outlined" color="primary" onClick={() => addLayer('clock')} style={{ ...buttonStyle }}><Clock style={{ ...iconStyle }} /></Button>
     </div>
   )
 }

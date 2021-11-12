@@ -1,7 +1,7 @@
 import React from 'react'
 import Anchor from './Anchor'
 import Guide from './Guide'
-
+import TextLayer from './layers/Text'
 export default ({
   layer,
   board,
@@ -11,13 +11,14 @@ export default ({
   setActiveLayerID
 }) => {
   const [start, setStart] = React.useState(null)
+  const [editing, setEditing] = React.useState(false)
   const tops = layers.filter(l => l.id !== layer.id).map(l => l.top)
   const bottoms = layers.filter(l => l.id !== layer.id).map(l => l.top + l.height)
   const lefts = layers.filter(l => l.id !== layer.id).map(l => l.left)
   const rights = layers.filter(l => l.id !== layer.id).map(l => l.left + l.width)
   const layerXs = tops.concat(bottoms)
   const layerYs = lefts.concat(rights)
-  
+
   React.useEffect(() => {
     if (JSON.stringify(start) !== JSON.stringify({}) && start !== null) {
       board.current.addEventListener('mousemove', drag)
@@ -114,27 +115,62 @@ export default ({
       // onBlur={() => setActiveLayerID({})}
       style={{ outline: 'none' }}
       tabIndex="-1"
+      onMouseDown={startDrag}
     >
       <rect
-        style={{ fill: 'white', stroke: layer.id === activeLayerID ? '#bebebe' : undefined, strokeWidth: 1, fillOpacity: '.5' }}
+        style={{
+          fill: 'transparent',
+          stroke: layer.id === activeLayerID ? '#bebebe' : undefined,
+          strokeWidth: layer.id === activeLayerID ? 1 : 0
+        }}
         x={layer.left}
         y={layer.top}
         width={layer.width}
         height={layer.height}
-        onMouseDown={startDrag}
       />
-
-      <image
-        xlinkHref={{
-          'image': `./assets/images/${layer.data.id}.jpg`,
-          'video': `./assets/previews/${layer.data.id}.jpg`,
-        }[layer.data.type]}
-        x={layer.left + 1}
-        y={layer.top + 1}
-        width={layer.width - 2}
-        height={layer.height - 2}
-        onMouseDown={startDrag}
-      />
+      {
+        ['image', 'video'].includes(layer.data.type) &&
+        <image
+          xlinkHref={{
+            'image': `./assets/images/${layer.data.id}.jpg`,
+            'video': `./assets/previews/${layer.data.id}.jpg`,
+          }[layer.data.type]}
+          x={layer.left + 1}
+          y={layer.top + 1}
+          width={layer.width - 2}
+          height={layer.height - 2}
+          onMouseDown={startDrag}
+        />
+      }
+      {
+        ['text', 'clock'].includes(layer.data.type) &&
+        layer.data.value === '' &&
+        <image
+          xlinkHref={`./assets/tools/${layer.data.type}.jpg`}
+          x={layer.left + 1}
+          y={layer.top + 1}
+          width={layer.width - 2}
+          height={layer.height - 2}
+          onMouseDown={startDrag}
+        />
+      }
+      {
+        layer.data.value.trim().length > 0 &&
+        {
+          'text': <TextLayer
+            layer={layer}
+            editing={editing}
+            setEditing={setEditing}
+            finish={value => handleUpdateLayer({
+              ...layer,
+              data: {
+                ...layer.data,
+                value
+              }
+            })}
+          />
+        }[layer.data.type]
+      }
       {layer.id === activeLayerID && <>
         <Anchor
           position="left-top"

@@ -15,20 +15,23 @@ export default () => {
     //   top: 20,
     //   left: 30,
     //   data: {
-    //     type: 'video',
-    //     id: 1
-    //   }
-    // },{
-    //   id: 2,
-    //   width: 400,
-    //   height: 300,
-    //   top: 80,
-    //   left: 200,
-    //   data: {
-    //     type: 'image',
-    //     id: 1
+    //     type: 'clock',
+    //     id: 0,
+    //     value: 'YYYY/MM/DD hh:mm'
     //   }
     // },
+    {
+      id: 2,
+      width: 100,
+      height: 100,
+      top: 80,
+      left: 200,
+      data: {
+        type: 'text',
+        id: 0,
+        value: 'Hello World！'
+      }
+    },
   ])
   const [activeLayerID, setActiveLayerID] = React.useState()
   const [board, setBoard] = React.useState({
@@ -51,7 +54,8 @@ export default () => {
         left: 0,
         data: {
           type,
-          id: 0
+          id: 0,
+          value: ''
         }
       }])
   }
