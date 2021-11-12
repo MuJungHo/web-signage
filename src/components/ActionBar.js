@@ -6,7 +6,7 @@ import moment from 'moment'
 export default ({ layers, setLayers, activeLayerID, setActiveLayerID }) => {
   const activeLayer = layers.find(layer => layer.id === activeLayerID) || {}
   return (
-    <div style={{ width: '100%' }}>
+    <div style={{ width: '100%', backgroundColor: 'rgb(241, 243, 247)' }}>
       <IconButton color="primary" component="span"
         disabled={!activeLayerID}
         style={{ float: 'right' }}

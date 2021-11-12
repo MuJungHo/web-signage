@@ -9,7 +9,6 @@ export default ({ layers, setLayers, activeLayerID, setActiveLayerID, board }) =
       height={board.height}
       ref={boardRef}
       // stroke="#f5f5f5"
-      style={{ marginTop: 20 }}
     >
       {
         board.background.type === 'color'

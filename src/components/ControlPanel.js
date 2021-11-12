@@ -151,8 +151,8 @@ const BoardProperties = ({ board, setBoard }) => {
           type: e.target.value
         }
       })}>
-        <FormControlLabel value="color" control={<Radio />} label="color" />
-        <FormControlLabel value="image" control={<Radio />} label="image" />
+        <FormControlLabel value="color" control={<Radio color="primary" />} label="color" />
+        <FormControlLabel value="image" control={<Radio color="primary" />} label="image" />
       </RadioGroup>
       {
         board.background.type === 'color'
@@ -218,8 +218,8 @@ export default ({ layers, setLayers, activeLayerID, board, setBoard }) => {
         activeLayer.data ? {
           'image': <ImageProperties activeLayer={activeLayer} layers={layers} setLayers={setLayers} />,
           'video': <VideoProperties activeLayer={activeLayer} layers={layers} setLayers={setLayers} />,
-          'text': <TextProperties activeLayer={activeLayer} layers={layers} setLayers={setLayers}/>,
-          'time': <TimeProperties activeLayer={activeLayer} layers={layers} setLayers={setLayers}/>,
+          'text': <TextProperties activeLayer={activeLayer} layers={layers} setLayers={setLayers} />,
+          'time': <TimeProperties activeLayer={activeLayer} layers={layers} setLayers={setLayers} />,
         }[activeLayer.data.type]
           : <BoardProperties board={board} setBoard={setBoard} />
       }

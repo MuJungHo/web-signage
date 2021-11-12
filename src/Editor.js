@@ -70,7 +70,7 @@ export default () => {
     <div style={{
       width: '100%',
       height: '100vh',
-      backgroundColor: 'rgba(74,91,117,.1)'
+      backgroundColor: 'rgba(0, 0, 0, 0.13)'
     }}>
       <Header
         layers={layers}
