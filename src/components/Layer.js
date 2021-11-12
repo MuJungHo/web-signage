@@ -144,6 +144,20 @@ export default ({
         />
       }
       {
+        ['image', 'video'].includes(layer.data.type) &&
+        layer.data.id > 0 &&
+        <image
+          xlinkHref={{
+            'image': `./assets/images/0.jpg`,
+            'video': `./assets/previews/0.jpg`,
+          }[layer.data.type]}
+          x={layer.left + 10}
+          y={layer.top + 10}
+          width={20}
+          height={20}
+        />
+      }
+      {
         (!editing &&
           ['text', 'time'].includes(layer.data.type) &&
           layer.data.value.trim().length === 0) &&
