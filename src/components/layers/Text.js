@@ -17,6 +17,7 @@ export default ({ layer, editing, setEditing, finish }) => {
           width: '100%',
           height: '100%',
           userSelect: 'none',
+          wordWrap: 'break-word',
           color: layer.data.fontColor ? layer.data.fontColor : undefined,
           backgroundColor: layer.data.backgroundColor ? layer.data.backgroundColor : undefined,
           fontSize: layer.data.fontSize ? layer.data.fontSize + 'px' : undefined
