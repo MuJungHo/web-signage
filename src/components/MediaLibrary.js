@@ -10,9 +10,8 @@ import {
 export default ({ isDialogOpen, setDialogOpen, close, type, confirm }) => {
   const [selected, setSelected] = React.useState()
   const card = {
-    maxHeight: 100,
-    marginLeft: 20,
-    marginTop: 20
+    maxHeight: 95,
+    margin: 10
   }
   const handleClose = () => {
     if (typeof close === 'function') close()

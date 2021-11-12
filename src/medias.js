@@ -9,40 +9,40 @@ const images = {
     type: 'jpg'
   },
   2: {
-    name: '我懷疑妳在開車',
-    size: '95 KB',
+    name: 'SAVE THE DATE',
+    size: '723 KB',
     type: 'jpg'
   },
   3: {
-    name: '我知道了',
-    size: '18 KB',
+    name: 'Sunset in Golden Hole, Istanbul',
+    size: '2.5 MB',
     type: 'jpg'
   },
   4: {
-    name: '別再說了',
-    size: '52 KB',
+    name: 'West Virginia, USA',
+    size: '8 MB',
     type: 'jpg'
   },
 }
 const videos = {
   1: {
     name: '月亮',
-    size: '1534 KB',
+    size: '1.5 MB',
     type: 'mp4'
   },
   2: {
-    name: '蚵仔麵線',
-    size: '34945 KB',
+    name: '空中的花朵',
+    size: '1.2 MB',
     type: 'mp4'
   },
   3: {
-    name: '讓浪漫做主',
-    size: '34912 KB',
+    name: '溫室',
+    size: '8.7 MB',
     type: 'mp4'
   },
   4: {
-    name: '兔子',
-    size: '10300 KB',
+    name: '湖邊',
+    size: '11 MB',
     type: 'mp4'
   },
 }
