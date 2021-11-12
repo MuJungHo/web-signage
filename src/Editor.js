@@ -15,23 +15,30 @@ export default () => {
     //   top: 20,
     //   left: 30,
     //   data: {
-    //     type: 'clock',
+    //     type: 'text',
     //     id: 0,
-    //     value: 'YYYY/MM/DD hh:mm'
+    //     value: 'Hello World!',
+    //     backgroundColor: '#000000',
+    //     fontColor: '#ffffff',
+    //     fontSize: 20,
+
     //   }
     // },
-    {
-      id: 2,
-      width: 100,
-      height: 100,
-      top: 80,
-      left: 200,
-      data: {
-        type: 'time',
-        id: 0,
-        value: 'YYYY/MM/DD HH:mm:ss'
-      }
-    },
+    // {
+    //   id: 2,
+    //   width: 100,
+    //   height: 100,
+    //   top: 80,
+    //   left: 200,
+    //   data: {
+    //     type: 'time',
+    //     id: 0,
+    //     value: 'YYYY/MM/DD HH:mm:ss',
+    //     backgroundColor: '#000000',
+    //     fontColor: '#ffffff',
+    //     fontSize: 20,
+    //   }
+    // },
   ])
   const [activeLayerID, setActiveLayerID] = React.useState()
   const [board, setBoard] = React.useState({

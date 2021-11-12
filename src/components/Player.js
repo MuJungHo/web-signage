@@ -4,6 +4,8 @@ import {
   IconButton
 } from '@material-ui/core'
 import CloseIcon from '@material-ui/icons/Close';
+import TextPlayer from './player/Text'
+import TimePlayer from './player/Time'
 const VideoLayer = ({ layer }) => {
   const zoom = 1.5
   return (
@@ -37,6 +39,8 @@ const Layer = ({ layer }) => {
       {{
         'image': <ImageLayer layer={layer} />,
         'video': <VideoLayer layer={layer} />,
+        'text': <TextPlayer layer={layer} />,
+        'time': <TimePlayer layer={layer} />
       }[layer.data.type]}
     </div>
   )
