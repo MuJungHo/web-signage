@@ -1,6 +1,10 @@
 import React from 'react'
 import {
   TextField,
+  MenuItem,
+  Select,
+  FormControl,
+  InputLabel
 } from '@material-ui/core'
 import BasicProperties from './Basic'
 import ColorPicker from '../ColorPicker'
@@ -15,17 +19,22 @@ export default ({ layers, setLayers, activeLayer }) => {
   }
   return (
     <div>
-      <h2>Text Properties</h2>
+      <h2>Time Properties</h2>
       <BasicProperties activeLayer={activeLayer} />
-      <h3 style={{ marginTop: 20, marginBottom: 10 }}>Text Content</h3>
-      <TextField
-        fullWidth
-        multiline
-        variant="outlined"
-        value={activeLayer.data.value}
-        onChange={e => handleUpdateLayer('value', e.target.value)}
-        minRows={5}
-      />
+      <h3 style={{ marginTop: 20, marginBottom: 10 }}>Format</h3>
+      <FormControl variant="outlined" fullWidth >
+        <Select
+          value={activeLayer.data.value}
+          onChange={e => handleUpdateLayer('value', e.target.value)}
+          displayEmpty
+        >
+          <MenuItem value={''}>Empty</MenuItem>
+          <MenuItem value={'YYYY/MM/DD HH:mm:ss'}>YYYY/MM/DD HH:mm:ss</MenuItem>
+          <MenuItem value={'YYYY/MM/DD hh:mm:ss a'}>YYYY/MM/DD hh:mm:ss a</MenuItem>
+          <MenuItem value={'HH:mm:ss'}>HH:mm:ss</MenuItem>
+          <MenuItem value={'hh:mm:ss a'}>hh:mm:ss a</MenuItem>
+        </Select>
+      </FormControl>
       <h3 style={{ marginTop: 20, marginBottom: 10 }}>Font Properties</h3>
       <div style={{ display: 'flex', alignItems: 'center' }}>
         <span style={{ marginRight: 10 }}>Color:</span>

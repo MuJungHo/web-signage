@@ -1,7 +1,7 @@
 import React from 'react'
 export default ({ layer, editing, setEditing, finish }) => {
   const [innerText, setInnerText] = React.useState(layer.data.value || '')
-  console.log(layer)
+
   return (
     <foreignObject
       x={layer.left}
@@ -16,7 +16,7 @@ export default ({ layer, editing, setEditing, finish }) => {
           userSelect: 'none',
           color: layer.data.fontColor ? layer.data.fontColor : undefined,
           backgroundColor: layer.data.backgroundColor ? layer.data.backgroundColor : undefined,
-          fontSize: layer.data.fontSize ? layer.data.fontSize + 'px' : undefined,
+          fontSize: layer.data.fontSize ? layer.data.fontSize + 'px' : undefined
         }}
         onDoubleClick={() => setEditing(true)}
       >

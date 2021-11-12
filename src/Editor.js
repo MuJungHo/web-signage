@@ -27,9 +27,9 @@ export default () => {
       top: 80,
       left: 200,
       data: {
-        type: 'text',
+        type: 'time',
         id: 0,
-        value: 'Hello World！'
+        value: 'YYYY/MM/DD HH:mm:ss'
       }
     },
   ])

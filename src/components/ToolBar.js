@@ -28,7 +28,7 @@ export default props => {
       <Button variant="outlined" color="primary" onClick={() => addLayer('image')} style={{ ...buttonStyle }}><Image style={{ ...iconStyle }} /></Button>
       <Button variant="outlined" color="primary" onClick={() => addLayer('video')} style={{ ...buttonStyle }}><Theaters style={{ ...iconStyle }} /></Button>
       <Button variant="outlined" color="primary" onClick={() => addLayer('text')} style={{ ...buttonStyle }}><TextFields style={{ ...iconStyle }} /></Button>
-      <Button variant="outlined" color="primary" onClick={() => addLayer('clock')} style={{ ...buttonStyle }}><Clock style={{ ...iconStyle }} /></Button>
+      <Button variant="outlined" color="primary" onClick={() => addLayer('time')} style={{ ...buttonStyle }}><Clock style={{ ...iconStyle }} /></Button>
     </div>
   )
 }

@@ -2,6 +2,7 @@ import React from 'react'
 import Anchor from './Anchor'
 import Guide from './Guide'
 import TextLayer from './layers/Text'
+import TimeLayer from './layers/Time'
 export default ({
   layer,
   board,
@@ -143,8 +144,8 @@ export default ({
         />
       }
       {
-        ['text', 'clock'].includes(layer.data.type) &&
-        layer.data.value === '' &&
+        ['text', 'time'].includes(layer.data.type) &&
+        layer.data.value.trim().length === 0 &&
         <image
           xlinkHref={`./assets/tools/${layer.data.type}.jpg`}
           x={layer.left + 1}
@@ -152,10 +153,15 @@ export default ({
           width={layer.width - 2}
           height={layer.height - 2}
           onMouseDown={startDrag}
+          onDoubleClick={() => setEditing(true)}
         />
       }
       {
-        layer.data.value.trim().length > 0 &&
+        (
+          editing ||
+          ['text', 'time'].includes(layer.data.type) &&
+          layer.data.value.trim().length > 0
+        ) &&
         {
           'text': <TextLayer
             layer={layer}
@@ -168,7 +174,11 @@ export default ({
                 value
               }
             })}
-          />
+          />,
+          'time': <TimeLayer
+            layer={layer}
+            isActivated={layer.id === activeLayerID}
+          />,
         }[layer.data.type]
       }
       {layer.id === activeLayerID && <>

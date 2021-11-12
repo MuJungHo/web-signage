@@ -10,6 +10,7 @@ import MediaLibrary from './MediaLibrary'
 import { media } from '../medias'
 import ColorPicker from './ColorPicker'
 import TextProperties from './properties/Text'
+import TimeProperties from './properties/Time'
 const BasicProperties = ({ activeLayer }) => {
   return (
     <>
@@ -217,7 +218,8 @@ export default ({ layers, setLayers, activeLayerID, board, setBoard }) => {
         activeLayer.data ? {
           'image': <ImageProperties activeLayer={activeLayer} layers={layers} setLayers={setLayers} />,
           'video': <VideoProperties activeLayer={activeLayer} layers={layers} setLayers={setLayers} />,
-          'text': <TextProperties activeLayer={activeLayer} layers={layers} setLayers={setLayers}/>
+          'text': <TextProperties activeLayer={activeLayer} layers={layers} setLayers={setLayers}/>,
+          'time': <TimeProperties activeLayer={activeLayer} layers={layers} setLayers={setLayers}/>,
         }[activeLayer.data.type]
           : <BoardProperties board={board} setBoard={setBoard} />
       }
