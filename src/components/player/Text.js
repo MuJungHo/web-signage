@@ -10,7 +10,7 @@ export default ({ layer }) => {
         overflow: 'hidden',
         color: layer.data.fontColor ? layer.data.fontColor : undefined,
         backgroundColor: layer.data.backgroundColor ? layer.data.backgroundColor : undefined,
-        fontSize: layer.data.fontSize ? layer.data.fontSize * zoom + 'px' : undefined
+        fontSize: layer.data.fontSize ? layer.data.fontSize * zoom + 'px' : 14 * zoom
       }}
     >
       {layer.data.value}
