@@ -5,7 +5,7 @@ import {
 } from '@material-ui/core'
 import CloseIcon from '@material-ui/icons/Close';
 const VideoLayer = ({ layer }) => {
-  const zoom = 2
+  const zoom = 1.5
   return (
     <video width={layer.width * zoom} height={layer.height * zoom} autoPlay>
       <source src={`./assets/videos/${layer.data.id}.mp4`} type="video/mp4" />
@@ -13,7 +13,7 @@ const VideoLayer = ({ layer }) => {
   )
 }
 const ImageLayer = ({ layer }) => {
-  const zoom = 2
+  const zoom = 1.5
   return (
     <img
       src={`./assets/images/${layer.data.id}.jpg`}
@@ -25,7 +25,7 @@ const ImageLayer = ({ layer }) => {
   )
 }
 const Layer = ({ layer }) => {
-  const zoom = 2
+  const zoom = 1.5
   return (
     <div style={{
       position: 'absolute',
