@@ -6,6 +6,8 @@ export default ({ layer }) => {
       style={{
         width: layer.width * zoom,
         height: layer.height * zoom,
+        wordWrap: 'break-word',
+        overflow: 'hidden',
         color: layer.data.fontColor ? layer.data.fontColor : undefined,
         backgroundColor: layer.data.backgroundColor ? layer.data.backgroundColor : undefined,
         fontSize: layer.data.fontSize ? layer.data.fontSize * zoom + 'px' : undefined
