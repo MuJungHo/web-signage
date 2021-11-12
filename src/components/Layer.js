@@ -144,8 +144,9 @@ export default ({
         />
       }
       {
-        ['text', 'time'].includes(layer.data.type) &&
-        layer.data.value.trim().length === 0 &&
+        (!editing &&
+          ['text', 'time'].includes(layer.data.type) &&
+          layer.data.value.trim().length === 0) &&
         <image
           xlinkHref={`./assets/tools/${layer.data.type}.jpg`}
           x={layer.left + 1}
@@ -153,7 +154,7 @@ export default ({
           width={layer.width - 2}
           height={layer.height - 2}
           onMouseDown={startDrag}
-          onDoubleClick={() => setEditing(true)}
+          onDoubleClick={() => layer.data.type === 'text' ? setEditing(true) : {}}
         />
       }
       {

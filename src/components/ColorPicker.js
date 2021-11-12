@@ -1,7 +1,7 @@
 import React from 'react'
 import { SketchPicker } from 'react-color'
 import { TextField, Dialog } from '@material-ui/core'
-export default ({ value, onChange, style }) => {
+export default ({ value, onChange, style, disabled }) => {
   const [isDialogOpen, setDialogOpen] = React.useState(false)
   const handleComplete = e => {
     onChange(e)
@@ -15,9 +15,10 @@ export default ({ value, onChange, style }) => {
         value={value}
         style={{ ...style }}
         InputProps={{ inputProps: { style: { padding: '.5rem' } } }}
-        onClick={() => setDialogOpen(true)}
+        onClick={() => disabled ? {} : setDialogOpen(true)}
         onChange={onChange}
         fullWidth
+        disabled={disabled}
         InputLabelProps={{
           shrink: true,
         }} />

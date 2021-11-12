@@ -2,6 +2,9 @@ import React from 'react'
 export default ({ layer, editing, setEditing, finish }) => {
   const [innerText, setInnerText] = React.useState(layer.data.value || '')
 
+  React.useEffect(() => {
+    if (document.getElementById(`text_${layer.id}`)) document.getElementById(`text_${layer.id}`).focus()
+  }, [])
   return (
     <foreignObject
       x={layer.left}
@@ -24,6 +27,7 @@ export default ({ layer, editing, setEditing, finish }) => {
           editing
             ?
             <div
+              id={`text_${layer.id}`}
               contentEditable
               suppressContentEditableWarning
               tabIndex="-1"
