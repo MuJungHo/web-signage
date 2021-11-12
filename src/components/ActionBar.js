@@ -12,7 +12,7 @@ export default ({ layers, setLayers, activeLayerID, setActiveLayerID }) => {
         style={{ float: 'right' }}
         onClick={() => {
           setLayers([...layers.filter(layer => layer.id !== activeLayerID)])
-          setActiveLayerID({})
+          setActiveLayerID()
         }}>
         <DeleteIcon />
       </IconButton>
@@ -20,7 +20,9 @@ export default ({ layers, setLayers, activeLayerID, setActiveLayerID }) => {
         disabled={!activeLayerID}
         style={{ float: 'right' }}
         onClick={() => {
-          setLayers([...layers, { ...activeLayer, id: moment().unix(), left: activeLayer.left + 10, top: activeLayer.top + 10 }])
+          let id = moment().unix()
+          setLayers([...layers, { ...activeLayer, id , left: activeLayer.left + 20, top: activeLayer.top + 20 }])
+          setActiveLayerID(id)
         }}>
         <FileCopyIcon />
       </IconButton>

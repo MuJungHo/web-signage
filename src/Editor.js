@@ -51,10 +51,11 @@ export default () => {
     }
   })
   const handleAddLayer = type => {
+    const id = moment().unix()
     setLayers([
       ...layers,
       {
-        id: moment().unix(),
+        id,
         width: 100,
         height: 100,
         top: 0,
@@ -65,6 +66,7 @@ export default () => {
           value: ''
         }
       }])
+    setActiveLayerID(id)
   }
   return (
     <div style={{
