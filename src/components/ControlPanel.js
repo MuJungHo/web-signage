@@ -50,9 +50,15 @@ const BasicProperties = ({ activeLayer }) => {
 const ImageProperties = ({ layers, setLayers, activeLayer }) => {
   const [isDialogOpen, setDialogOpen] = React.useState(false)
   const insertImageFromLibrary = id => {
+    // media('image', activeLayer.data.id).name
     const updatedLayers = layers.map(layer => {
       return layer.id === activeLayer.id
-        ? { ...layer, data: { ...layer.data, id } }
+        ? {
+          ...layer,
+          width: media('image', id).width,
+          height: media('image', id).height,
+          data: { ...layer.data, id }
+        }
         : { ...layer }
     })
     setLayers([...updatedLayers])
@@ -96,7 +102,12 @@ const VideoProperties = ({ layers, setLayers, activeLayer }) => {
   const insertVideoFromLibrary = id => {
     const updatedLayers = layers.map(layer => {
       return layer.id === activeLayer.id
-        ? { ...layer, data: { ...layer.data, id } }
+        ? {
+          ...layer,
+          width: media('video', id).width,
+          height: media('video', id).height,
+          data: { ...layer.data, id }
+        }
         : { ...layer }
     })
     setLayers([...updatedLayers])

@@ -136,10 +136,10 @@ export default ({
             'image': `./assets/images/${layer.data.id}.jpg`,
             'video': `./assets/previews/${layer.data.id}.jpg`,
           }[layer.data.type]}
-          x={layer.left + 1}
-          y={layer.top + 1}
-          width={layer.width - 2}
-          height={layer.height - 2}
+          x={layer.left}
+          y={layer.top}
+          width={layer.width}
+          height={layer.height}
           onMouseDown={startDrag}
         />
       }
@@ -163,10 +163,10 @@ export default ({
           layer.data.value.trim().length === 0) &&
         <image
           xlinkHref={`./assets/tools/${layer.data.type}.jpg`}
-          x={layer.left + 1}
-          y={layer.top + 1}
-          width={layer.width - 2}
-          height={layer.height - 2}
+          x={layer.left}
+          y={layer.top}
+          width={layer.width}
+          height={layer.height}
           onMouseDown={startDrag}
           onDoubleClick={() => layer.data.type === 'text' ? setEditing(true) : {}}
         />
