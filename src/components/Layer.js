@@ -3,6 +3,7 @@ import Anchor from './Anchor'
 import Guide from './Guide'
 import TextLayer from './layers/Text'
 import TimeLayer from './layers/Time'
+import { media } from '../medias'
 export default ({
   layer,
   board,
@@ -110,6 +111,23 @@ export default ({
       return layerYs.some(layerY => Math.abs(layerY - layer.left - layer.width) < 10)
     }
   }
+  const handleMediaSizeFitting = layer => {
+    const baseOnWidth = layer.width / layer.height > 1
+    const originMediaWidth = media(layer.data.type, layer.data.id).width
+    const originMediaHeight = media(layer.data.type, layer.data.id).height
+    const layerWidth = baseOnWidth ? layer.width : originMediaWidth * layer.height / originMediaHeight
+    const layerHeight = baseOnWidth ? originMediaHeight * layer.width / originMediaWidth : layer.height
+    const updatedLayers = layers.map(y => {
+      return y.id === activeLayerID
+        ? {
+          ...y,
+          width: layerWidth,
+          height: layerHeight
+        }
+        : { ...y }
+    })
+    setLayers([...updatedLayers])
+  }
   return (
     <g
       onFocus={() => setActiveLayerID(layer.id)}
@@ -136,26 +154,36 @@ export default ({
             'image': `./assets/images/${layer.data.id}.jpg`,
             'video': `./assets/previews/${layer.data.id}.jpg`,
           }[layer.data.type]}
-          x={layer.left + 1}
-          y={layer.top + 1}
-          width={layer.width - 2}
-          height={layer.height - 2}
+          x={layer.left}
+          y={layer.top}
+          width={layer.width}
+          height={layer.height}
           onMouseDown={startDrag}
         />
       }
       {
         ['image', 'video'].includes(layer.data.type) &&
         layer.data.id > 0 &&
-        <image
-          xlinkHref={{
-            'image': `./assets/images/0.jpg`,
-            'video': `./assets/previews/0.jpg`,
-          }[layer.data.type]}
-          x={layer.left + 10}
-          y={layer.top + 10}
-          width={20}
-          height={20}
-        />
+        <>
+          <image
+            xlinkHref={{
+              'image': `./assets/images/0.jpg`,
+              'video': `./assets/previews/0.jpg`,
+            }[layer.data.type]}
+            x={layer.left + 10}
+            y={layer.top + 10}
+            width={20}
+            height={20}
+          />
+          {layer.id === activeLayerID && <image
+            xlinkHref={`./assets/tools/fit.jpg`}
+            x={layer.left + layer.width - 30}
+            y={layer.top + layer.height - 30}
+            width={20}
+            height={20}
+            onClick={() => handleMediaSizeFitting(layer)}
+          />}
+        </>
       }
       {
         (!editing &&
@@ -163,10 +191,10 @@ export default ({
           layer.data.value.trim().length === 0) &&
         <image
           xlinkHref={`./assets/tools/${layer.data.type}.jpg`}
-          x={layer.left + 1}
-          y={layer.top + 1}
-          width={layer.width - 2}
-          height={layer.height - 2}
+          x={layer.left}
+          y={layer.top}
+          width={layer.width}
+          height={layer.height}
           onMouseDown={startDrag}
           onDoubleClick={() => layer.data.type === 'text' ? setEditing(true) : {}}
         />
