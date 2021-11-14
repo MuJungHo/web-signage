@@ -9,13 +9,13 @@ const images = {
     type: 'jpg'
   },
   2: {
-    name: 'SAVE THE DATE',
-    size: '723 KB',
+    name: 'Doughnuts',
+    size: '440 KB',
     type: 'jpg'
   },
   3: {
-    name: 'Sunset in Golden Hole, Istanbul',
-    size: '2.5 MB',
+    name: 'Food & Drink',
+    size: '3.7 MB',
     type: 'jpg'
   },
   4: {

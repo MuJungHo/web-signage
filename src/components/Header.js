@@ -14,7 +14,7 @@ export default ({ layers, board }) => {
       alignItems: 'center',
       padding: '0 20px'
     }}>
-      <h1>Web Player</h1>
+      <h1>Content Editor</h1>
       <div style={{ flex: 1 }}></div>
       <Button variant="contained" color="primary" onClick={() => setDialogOpen(true)}><PlayArrowIcon/>Play</Button>
       <Player isDialogOpen={isDialogOpen} setDialogOpen={setDialogOpen} layers={layers} board={board}/>
