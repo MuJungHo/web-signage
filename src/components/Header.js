@@ -4,7 +4,6 @@ import {
 } from '@material-ui/core'
 import Player from './Player'
 import PlayArrowIcon from '@material-ui/icons/PlayArrow';
-import GitHubIcon from '@material-ui/icons/GitHub';
 export default ({ layers, board }) => {
   const [isDialogOpen, setDialogOpen] = React.useState(false)
   return (
@@ -16,7 +15,9 @@ export default ({ layers, board }) => {
       padding: '0 20px'
     }}>
       <h1>Content Editor</h1>
-      <a href="https://github.com/MuJungHo/web-signage" style={{ marginLeft: 20 }}><GitHubIcon /></a>
+      <a href="https://github.com/MuJungHo/web-signage" style={{ marginLeft: 20 }}>
+        <img src="./assets/github.png" style={{ width: 21, height: 21 }} />
+      </a>
       <a href="https://www.cakeresume.com/s--wA2sd_4ZK9vTxhOa5btHIQ--/mjho" style={{ marginLeft: 20 }}>
         <img src="./assets/cakeresume.png" style={{ width: 21, height: 21 }} />
       </a>
