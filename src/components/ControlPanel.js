@@ -152,8 +152,8 @@ const BoardProperties = ({ board, setBoard }) => {
   return (
     <div>
       <h2>Board Properties</h2>
-      <h3 style={{ margin: '16px 0' }}>{`Width: ${board.width}`}</h3>
-      <h3 style={{ margin: '16px 0' }}>{`Height: ${board.height}`}</h3>
+      <h3 style={{ margin: '16px 0' }}>{`Width: ${Math.floor(board.width)}`}</h3>
+      <h3 style={{ margin: '16px 0' }}>{`Height: ${Math.floor(board.height)}`}</h3>
       <h3 style={{ marginTop: 16, marginBottom: 8 }}>Background: </h3>
       <RadioGroup row aria-label="gender" name="gender1" value={board.background.type} onChange={e => setBoard({
         ...board,
