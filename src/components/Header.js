@@ -18,9 +18,6 @@ export default ({ layers, board }) => {
       <a href="https://github.com/MuJungHo/web-signage" style={{ marginLeft: 20 }}>
         <img src="./assets/github.png" style={{ width: 21, height: 21 }} />
       </a>
-      <a href="https://www.cakeresume.com/s--wA2sd_4ZK9vTxhOa5btHIQ--/mjho" style={{ marginLeft: 20 }}>
-        <img src="./assets/cakeresume.png" style={{ width: 21, height: 21 }} />
-      </a>
       <div style={{ flex: 1 }}></div>
       <Button variant="contained" color="primary" onClick={() => setDialogOpen(true)}><PlayArrowIcon />Play</Button>
       <Player isDialogOpen={isDialogOpen} setDialogOpen={setDialogOpen} layers={layers} board={board} />
