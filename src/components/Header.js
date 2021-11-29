@@ -16,7 +16,7 @@ export default ({ layers, board }) => {
     }}>
       <h1>Content Editor</h1>
       <a href="https://github.com/MuJungHo/web-signage" style={{ marginLeft: 20 }}>
-        <img src="./assets/github.png" style={{ width: 21, height: 21 }} />
+        <img src="./assets/github.png" style={{ width: 21, height: 21, borderRadius: '50%' }} />
       </a>
       <div style={{ flex: 1 }}></div>
       <Button variant="contained" color="primary" onClick={() => setDialogOpen(true)}><PlayArrowIcon />Play</Button>
