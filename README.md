@@ -1,5 +1,5 @@
 # web-signage
-User can edit content and play it online.
+Users can edit content and play it online.
 
 ### Demo
 

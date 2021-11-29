@@ -4,6 +4,7 @@ import {
 } from '@material-ui/core'
 import Player from './Player'
 import PlayArrowIcon from '@material-ui/icons/PlayArrow';
+import GitHubIcon from '@material-ui/icons/GitHub';
 export default ({ layers, board }) => {
   const [isDialogOpen, setDialogOpen] = React.useState(false)
   return (
@@ -14,10 +15,11 @@ export default ({ layers, board }) => {
       alignItems: 'center',
       padding: '0 20px'
     }}>
+      <GitHubIcon style={{ marginRight: 20 }} />
       <h1>Content Editor</h1>
       <div style={{ flex: 1 }}></div>
-      <Button variant="contained" color="primary" onClick={() => setDialogOpen(true)}><PlayArrowIcon/>Play</Button>
-      <Player isDialogOpen={isDialogOpen} setDialogOpen={setDialogOpen} layers={layers} board={board}/>
+      <Button variant="contained" color="primary" onClick={() => setDialogOpen(true)}><PlayArrowIcon />Play</Button>
+      <Player isDialogOpen={isDialogOpen} setDialogOpen={setDialogOpen} layers={layers} board={board} />
     </div>
   )
 }
