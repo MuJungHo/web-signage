@@ -15,8 +15,11 @@ export default ({ layers, board }) => {
       alignItems: 'center',
       padding: '0 20px'
     }}>
-      <GitHubIcon style={{ marginRight: 20 }} />
       <h1>Content Editor</h1>
+      <a href="https://github.com/MuJungHo/web-signage" style={{ marginLeft: 20 }}><GitHubIcon /></a>
+      <a href="https://www.cakeresume.com/s--wA2sd_4ZK9vTxhOa5btHIQ--/mjho" style={{ marginLeft: 20 }}>
+        <img src="./assets/cakeresume.png" style={{ width: 21, height: 21 }} />
+      </a>
       <div style={{ flex: 1 }}></div>
       <Button variant="contained" color="primary" onClick={() => setDialogOpen(true)}><PlayArrowIcon />Play</Button>
       <Player isDialogOpen={isDialogOpen} setDialogOpen={setDialogOpen} layers={layers} board={board} />
