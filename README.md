@@ -1,7 +1,7 @@
 # web-signage
 Users can edit content and play it online.
 
-![](./public/assets/github.png)
+<!-- ![](./public/assets/github.png) -->
 
 ### Demo
 
