@@ -13,7 +13,7 @@ Users can edit content and play it online.
   * 複製區塊
 * 區塊
   * 圖片
-   * 插入媒體庫圖片 
+    * 插入媒體庫圖片 
   * 影片
   * 文字
   * 時間
