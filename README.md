@@ -1,9 +1,9 @@
 # web-signage
 Users can edit content and play it online.
 
-## 主功能描述
-
 在編輯區中編輯想播放的內容，完成後按下 "PLAY" 按鈕。
+
+## 主功能
 
 * 菜單
   * 新增區塊
