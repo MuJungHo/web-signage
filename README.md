@@ -7,7 +7,7 @@ Users can edit content and play it online.
   * 新增區塊
 * 編輯區
   * 區塊 Draggable Resizable
-  * 區塊移動時可以自動對齊其他區塊
+  * **區塊移動時可以自動對齊其他區塊**
 * 工具列
   * 刪除區塊
   * 複製區塊
@@ -17,7 +17,7 @@ Users can edit content and play it online.
   * 影片
     * 插入媒體庫影片
   * 文字
-    * 雙擊文字區塊輸入文字
+    * **雙擊文字區塊輸入文字**
     * 編輯文字顏色
   * 時間
     * 選擇時間格式
