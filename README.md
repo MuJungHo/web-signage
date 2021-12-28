@@ -1,7 +1,7 @@
-## web-signage
+# web-signage
 Users can edit content and play it online.
 
-## 主功能描述
+# 主功能描述
 
 ### 區塊菜單
   * 點擊新增區塊
@@ -17,6 +17,6 @@ Users can edit content and play it online.
   * 文字
   * 時間
 
-## Demo
+# Demo
 
 Online Demo is [here](https://mujungho.github.io/web-signage/)!
