@@ -7,9 +7,10 @@ Users can edit content and play it online.
 
 * 菜單
   * 新增區塊
-* 編輯區
+* 畫布
   * 區塊 Draggable Resizable
   * **區塊移動時可以自動對齊其他區塊**
+  * 背景可設定顏色或是圖片
 * 工具列
   * 刪除區塊
   * 複製區塊
