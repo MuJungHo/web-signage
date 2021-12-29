@@ -3,8 +3,6 @@ Users can edit content and play it online.
 
 使用者編輯想播放的內容，完成後按下 "PLAY" 按鈕。
 
-## Demo
-
 Online Demo is [here](https://mujungho.github.io/web-signage/)!
 
 ## 主功能
