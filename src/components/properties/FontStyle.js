@@ -26,7 +26,7 @@ export default ({ layers, setLayers, activeLayer }) => {
             ...layer.data,
             textDecoration: newFormats.includes('underlined') ? 'underline' : 'none',
             fontStyle: newFormats.includes('italic') ? 'italic' : 'normal',
-            fontWeight: newFormats.includes('bold') ? 'bold' : 'normal'
+            fontWeight: newFormats.includes('bold') ? 'bold' : 'normal',
           }
         }
         : { ...layer }

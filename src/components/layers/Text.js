@@ -24,6 +24,7 @@ export default ({ layer, editing, setEditing, finish }) => {
           fontWeight: layer.data.fontWeight,
           fontStyle: layer.data.fontStyle,
           textDecoration: layer.data.textDecoration,
+          textAlign: layer.data.textAlign
         }}
         onDoubleClick={() => setEditing(true)}
       >

@@ -46,12 +46,18 @@ export default ({ layers, setLayers, activeLayer }) => {
           onChange={e => handleUpdateLayer('fontSize', e.target.value)}
         />
       </div>
-      <FontStyle
-        layers={layers}
-        setLayers={setLayers}
-        activeLayer={activeLayer}
-      />
-      <TextAlign />
+      <div style={{ display: 'flex', justifyContent: 'space-between', marginTop: 10 }}>
+        <FontStyle
+          layers={layers}
+          setLayers={setLayers}
+          activeLayer={activeLayer}
+        />
+        <TextAlign
+          layers={layers}
+          setLayers={setLayers}
+          activeLayer={activeLayer}
+        />
+      </div>
     </div>
   )
 }

@@ -14,6 +14,7 @@ export default ({ layer }) => {
         fontWeight: layer.data.fontWeight,
         fontStyle: layer.data.fontStyle,
         textDecoration: layer.data.textDecoration,
+        textAlign: layer.data.textAlign
       }}
     >
       {layer.data.value}

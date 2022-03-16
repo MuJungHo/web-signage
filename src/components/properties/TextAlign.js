@@ -6,11 +6,24 @@ import FormatAlignJustifyIcon from '@material-ui/icons/FormatAlignJustify';
 import ToggleButton from '@material-ui/lab/ToggleButton';
 import ToggleButtonGroup from '@material-ui/lab/ToggleButtonGroup';
 
-export default function ToggleButtons() {
-  const [alignment, setAlignment] = React.useState('left');
+export default ({ layers, setLayers, activeLayer }) => {
+
+  const [alignment, setAlignment] = React.useState(activeLayer.data.textAlign || 'left');
 
   const handleAlignment = (event, newAlignment) => {
     setAlignment(newAlignment);
+    const updatedLayers = layers.map(layer => {
+      return layer.id === activeLayer.id
+        ? {
+          ...layer,
+          data: {
+            ...layer.data,
+            textAlign: newAlignment
+          }
+        }
+        : { ...layer }
+    })
+    setLayers([...updatedLayers])
   };
 
   return (
@@ -28,9 +41,6 @@ export default function ToggleButtons() {
       </ToggleButton>
       <ToggleButton value="right" aria-label="right aligned">
         <FormatAlignRightIcon />
-      </ToggleButton>
-      <ToggleButton value="justify" aria-label="justified" disabled>
-        <FormatAlignJustifyIcon />
       </ToggleButton>
     </ToggleButtonGroup>
   );
