@@ -6,15 +6,19 @@ import Player from './Player'
 import PlayArrowIcon from '@material-ui/icons/PlayArrow';
 import SystemUpdateAlt from '@material-ui/icons/SystemUpdateAlt';
 import moment from 'moment'
-export default ({ layers, board, setLayers }) => {
+export default ({ layers, board, setLayers, setBoard }) => {
   const [isDialogOpen, setDialogOpen] = React.useState(false)
   const exportJsonFile = () => {
-    let dataStr = JSON.stringify(layers);
+    let json = {
+      layers,
+      board
+    };
+    let dataStr = JSON.stringify(json);
     let dataUri = 'data:application/json;charset=utf-8,' + encodeURIComponent(dataStr);
 
     let linkElement = document.createElement('a');
     linkElement.setAttribute('href', dataUri);
-    linkElement.setAttribute('download', `data_${moment().unix()}.json`);
+    linkElement.setAttribute('download', `content_${moment().unix()}.json`);
     linkElement.click();
   }
   const importJsonFile = () => {
@@ -29,7 +33,9 @@ export default ({ layers, board, setLayers }) => {
       let reader = new FileReader();
       reader.onload = async (event) => {
         const jsonData = await JSON.parse(event.target.result)
-        setLayers(jsonData)
+        console.log(jsonData)
+        setLayers([...jsonData.layers])
+        setBoard({ ...jsonData.board })
         setDialogOpen(true)
       };
       reader.readAsText(file);

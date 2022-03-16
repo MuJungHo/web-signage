@@ -46,6 +46,7 @@ export default () => {
         layers={layers}
         setLayers={setLayers}
         board={board} 
+        setBoard={setBoard}
       />
       <div style={{
         width: '100%',
