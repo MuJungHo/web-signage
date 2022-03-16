@@ -3,6 +3,8 @@ import {
   TextField,
 } from '@material-ui/core'
 import BasicProperties from './Basic'
+import FontStyle from './FontStyle'
+import TextAlign from './TextAlign'
 import ColorPicker from '../ColorPicker'
 export default ({ layers, setLayers, activeLayer }) => {
   const handleUpdateLayer = (key, value) => {
@@ -44,15 +46,12 @@ export default ({ layers, setLayers, activeLayer }) => {
           onChange={e => handleUpdateLayer('fontSize', e.target.value)}
         />
       </div>
-      {/* <h3 style={{ marginTop: 20, marginBottom: 10 }}>Background Properties</h3>
-      <div style={{ display: 'flex', alignItems: 'center' }}>
-        <span style={{ marginRight: 10 }}>Color:</span>
-        <ColorPicker
-          disabled={activeLayer.data.value.trim().length === 0}
-          value={activeLayer.data.backgroundColor || '#f5f5f5'}
-          onChange={color => handleUpdateLayer('backgroundColor', color.hex)}
-        />
-      </div> */}
+      <FontStyle
+        layers={layers}
+        setLayers={setLayers}
+        activeLayer={activeLayer}
+      />
+      <TextAlign />
     </div>
   )
 }

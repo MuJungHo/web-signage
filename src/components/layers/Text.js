@@ -20,7 +20,10 @@ export default ({ layer, editing, setEditing, finish }) => {
           wordWrap: 'break-word',
           color: layer.data.fontColor ? layer.data.fontColor : undefined,
           backgroundColor: layer.data.backgroundColor ? layer.data.backgroundColor : undefined,
-          fontSize: layer.data.fontSize ? layer.data.fontSize + 'px' : undefined
+          fontSize: layer.data.fontSize ? layer.data.fontSize + 'px' : undefined,
+          fontWeight: layer.data.fontWeight,
+          fontStyle: layer.data.fontStyle,
+          textDecoration: layer.data.textDecoration,
         }}
         onDoubleClick={() => setEditing(true)}
       >
@@ -39,7 +42,7 @@ export default ({ layer, editing, setEditing, finish }) => {
               }}
               style={{
                 width: layer.width,
-                height: layer.height
+                height: layer.height,
               }}>
               {layer.data.value}
             </div>
