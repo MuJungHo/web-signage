@@ -7,39 +7,7 @@ import Header from './components/Header'
 import moment from 'moment'
 
 export default () => {
-  const [layers, setLayers] = React.useState([
-    // {
-    //   id: 1,
-    //   width: 115,
-    //   height: 80,
-    //   top: 20,
-    //   left: 30,
-    //   data: {
-    //     type: 'text',
-    //     id: 0,
-    //     value: 'Hello World!',
-    //     backgroundColor: '#000000',
-    //     fontColor: '#ffffff',
-    //     fontSize: 20,
-
-    //   }
-    // },
-    // {
-    //   id: 2,
-    //   width: 100,
-    //   height: 100,
-    //   top: 80,
-    //   left: 200,
-    //   data: {
-    //     type: 'time',
-    //     id: 0,
-    //     value: 'YYYY/MM/DD HH:mm:ss',
-    //     backgroundColor: '#000000',
-    //     fontColor: '#ffffff',
-    //     fontSize: 20,
-    //   }
-    // },
-  ])
+  const [layers, setLayers] = React.useState([])
   const [activeLayerID, setActiveLayerID] = React.useState()
   const [board, setBoard] = React.useState({
     width: window.innerWidth / 1.5,
@@ -76,7 +44,9 @@ export default () => {
     }}>
       <Header
         layers={layers}
-        board={board} />
+        setLayers={setLayers}
+        board={board} 
+      />
       <div style={{
         width: '100%',
         display: 'flex',
