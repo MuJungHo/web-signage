@@ -21,6 +21,25 @@ export default () => {
       imageId: 0
     }
   })
+  const addLayer = type => {
+    const id = moment().unix()
+    setLayers([
+      ...layers,
+      {
+        id,
+        width: 100,
+        height: 100,
+        top: 0,
+        left: 0,
+        data: {
+          type,
+          id: 0,
+          value: ''
+        }
+      }])
+    setActiveLayerID(id)
+    setGrabing(false)
+  }
   const handleDrop = e => {
     e.preventDefault()
     if (isGrabing) {
@@ -72,7 +91,7 @@ export default () => {
           alignItems: 'center',
           justifyContent: 'center',
         }}>
-        <ToolBar handleMouseDown={handleMouseDown} />
+        <ToolBar addLayer={addLayer} handleMouseDown={handleMouseDown} />
         <div
           style={{ flex: 1, padding: 20, display: 'flex', flexDirection: 'column', alignItems: 'center', height: 'calc(100vh - 80px)' }}>
           <ActionBar
