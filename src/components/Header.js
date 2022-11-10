@@ -1,13 +1,26 @@
 import React from 'react'
 import {
-  Button,
+  IconButton,
+  Menu,
+  MenuItem
 } from '@material-ui/core'
 import Player from './Player'
 import PlayArrowIcon from '@material-ui/icons/PlayArrow';
-import SystemUpdateAlt from '@material-ui/icons/SystemUpdateAlt';
+import CloudDownloadIcon from '@material-ui/icons/CloudDownload';
+import CloudUpload from '@material-ui/icons/CloudUpload';
+import Settings from '@material-ui/icons/Settings';
 import moment from 'moment'
 export default ({ layers, board, setLayers, setBoard }) => {
   const [isDialogOpen, setDialogOpen] = React.useState(false)
+  const [anchorEl, setAnchorEl] = React.useState(null);
+  const open = Boolean(anchorEl);
+
+  const handleClick = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
   const exportJsonFile = () => {
     let json = {
       layers,
@@ -54,9 +67,31 @@ export default ({ layers, board, setLayers, setBoard }) => {
         <img src="./assets/github.png" style={{ width: 21, height: 21, borderRadius: '50%' }} />
       </a>
       <div style={{ flex: 1 }}></div>
-      <Button style={{ marginRight: 20 }} variant="contained" color="primary" onClick={importJsonFile}><SystemUpdateAlt style={{ marginRight: 10 }} />Upload</Button>
-      <Button style={{ marginRight: 20 }} variant="contained" color="primary" onClick={exportJsonFile}><SystemUpdateAlt style={{ marginRight: 10 }} />Export</Button>
-      <Button variant="contained" color="primary" onClick={() => setDialogOpen(true)}><PlayArrowIcon style={{ marginRight: 10 }} />Play</Button>
+      <IconButton color="primary" onClick={handleClick} >
+        <Settings />
+      </IconButton>
+      <Menu
+        anchorEl={anchorEl}
+        id="account-menu"
+        open={open}
+        onClose={handleClose}
+        onClick={handleClose}
+        transformOrigin={{ horizontal: 'right', vertical: 'bottom' }}
+        anchorOrigin={{ horizontal: 'right', vertical: 'bottom' }}>
+        <MenuItem
+          onClick={importJsonFile}>
+          <CloudUpload style={{ marginRight: 10 }} />
+          Upload
+        </MenuItem>
+        <MenuItem
+          onClick={exportJsonFile}>
+          <CloudDownloadIcon style={{ marginRight: 10 }} />
+          Download
+        </MenuItem>
+      </Menu>
+      <IconButton color="primary" onClick={() => setDialogOpen(true)} >
+        <PlayArrowIcon />
+      </IconButton>
       <Player isDialogOpen={isDialogOpen} setDialogOpen={setDialogOpen} layers={layers} board={board} />
     </div>
   )

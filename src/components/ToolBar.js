@@ -3,6 +3,7 @@ import { Button } from '@material-ui/core'
 import Image from '@material-ui/icons/Image';
 import Theaters from '@material-ui/icons/Theaters';
 import Clock from '@material-ui/icons/AccessTime';
+import TextFields from '@material-ui/icons/TextFields';
 export default props => {
   const { handleMouseDown, addLayer } = props
   const buttonStyle = {
@@ -18,7 +19,7 @@ export default props => {
   const buttons = [
     { type: 'image', icon: <Image style={{ ...iconStyle }} /> },
     { type: 'video', icon: <Theaters style={{ ...iconStyle }} /> },
-    // { type: 'text', icon: <TextFields style={{ ...iconStyle }} /> },
+    { type: 'text', icon: <TextFields style={{ ...iconStyle }} /> },
     { type: 'time', icon: <Clock style={{ ...iconStyle }} /> }
   ]
   return (
